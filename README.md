@@ -2,6 +2,12 @@
 
 A tool to generate reverse shell code with provided host ip address and port. Useful for e.g. CTF and HackTheBox challenges.
 
+## Install
+
+```bash
+go get -u github.com/mskri/reverse-shell-generator
+```
+
 ## Usage
 
 ```bash
