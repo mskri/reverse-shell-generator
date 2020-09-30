@@ -3,6 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+	"os/exec"
+)
 )
 
 func main() {
@@ -17,4 +19,11 @@ func main() {
 	fmt.Println("host:", host)
 	fmt.Println("port:", port)
 	fmt.Println("tail:", flag.Args())
+
+func isCommandAvailable(name string, args string) bool {
+	cmd := exec.Command("command", args, name)
+	if err := cmd.Run(); err != nil {
+		return false
+	}
+	return true
 }
