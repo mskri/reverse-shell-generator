@@ -1,4 +1,4 @@
-# RSG - Reverse Shell Generator
+# Reverse Shell Generator
 
 A tool to generate reverse shell code with provided host ip address and port. Useful for e.g. CTF and HackTheBox challenges.
 
@@ -11,7 +11,7 @@ go get -u github.com/mskri/reverse-shell-generator
 ## Usage
 
 ```bash
-rsg --host 10.168.13.20 --port 4444
+reverse-shell-generator --host 10.168.13.20 --port 4444
 ```
 
 Listen to connections with e.g.
@@ -38,5 +38,5 @@ or build binary and run it manually
 
 ```bash
 go build .
-./rsg --host 127.0.0.1 --port 4444
+./reverse-shell-generator --host 127.0.0.1 --port 4444
 ```
