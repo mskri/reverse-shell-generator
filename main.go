@@ -23,9 +23,10 @@ func main() {
 
 	flag.Parse()
 
+	fmt.Printf(Yellow, "\n[inputs]\n\n")
 	fmt.Println("host:", host)
 	fmt.Println("port:", port)
-	fmt.Println("tail:", flag.Args())
+	// fmt.Println("tail:", flag.Args())
 
 	if isCommandAvailable("python", "-v") {
 		fmt.Printf(Yellow, "\n[python]\n\n")
